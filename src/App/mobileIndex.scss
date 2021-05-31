@@ -1,0 +1,70 @@
+@media (max-width: 480px) {
+  .header {
+    height: 400px;
+    .logo{
+      left:30px;
+    }
+    .caption{
+      left: 30px;
+    }
+    .headerbg{
+      -webkit-mask-image: linear-gradient(to top, transparent 20%, black 130%);
+      mask-image: linear-gradient(to top, transparent 10%, black 150%);
+    }
+    .headerbg.active{
+      top: 0;
+    }
+  }
+  .container{
+    width: 90%;
+    .awards{
+      .content{
+        flex-direction: column;
+        .left,.right{
+          width: 100%;
+        }
+        .right{
+          flex-wrap: wrap;
+          .item{
+            width: 100%;
+           .card{
+             .thumb{
+               height: 150px;
+             }
+             article{
+               width: 100%;
+             }
+           }
+          }
+        }
+      }
+    }
+    .homelist{
+      .item{
+        width: 48%;
+        .card{
+         .thumb{
+           height: 150px;
+         } 
+        }
+      }
+    }
+  }
+
+  .singleItem{
+    .itemContent{
+      width: 80%;
+      .thumb{
+        height: 170px;
+      }
+      article{
+        padding: 20px 20px;
+        .title{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+
+}
