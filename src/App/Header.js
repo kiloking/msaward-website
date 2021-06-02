@@ -22,7 +22,7 @@ function Header({slides}) {
       }
         
       <div className="logo">
-        <a href="https://www.moonshine.tw/" target="_blank">
+        <a href="https://www.moonshine.tw/" target="_blank" rel="noreferrer">
           <img src={process.env.PUBLIC_URL+"/images/"+"logo.svg"} alt="" />
         </a>
       </div>

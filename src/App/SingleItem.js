@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import ReactPlayer from 'react-player'
 function SingleItem({data,handler}) {
-  const {title , description , department,banner , link,ins,facebook,behance} = data
+  const {title , description , department, link,ins,facebook,behance} = data
   const [active , setActive] = useState(false)
   const handleClick= () =>{
     setActive(!active)
@@ -15,7 +15,7 @@ function SingleItem({data,handler}) {
       setActive(!active)
     }, 500);
     return () => clearTimeout(timer);
-  },active);
+  },[]);
 
   return (
     <div className="singleItem">
@@ -27,6 +27,8 @@ function SingleItem({data,handler}) {
             url={link} 
             width= "100%"
             height= "100%"
+            controls={true}
+            volume={0.4}
           />
         </div>
         <article>

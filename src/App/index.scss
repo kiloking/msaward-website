@@ -95,10 +95,14 @@ body{
     position: relative;
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
     &:hover{
       article{
         bottom:0;
         opacity: 1;
+      }
+      .thumb{
+        filter: brightness(1.25);
       }
     }
     .thumb {
@@ -108,6 +112,7 @@ body{
       height: 283px;
       background-size: cover;
       background-position: center;
+      transition: 0.3s;
     }
     article{
       padding: 20px;
@@ -120,6 +125,7 @@ body{
       bottom:-100px;
       opacity: 0;
       transition: all .22s ;
+      box-sizing: border-box;
       .title{
         font-size: 18px;
         line-height: 25px;
@@ -157,12 +163,10 @@ body{
     align-items: center;
     .left{
       width: 50%;
-      h1{
-        // text-shadow: 1px 1px 10px #e3dccc;
-      }
+      h1{}
       p{
         font-size: 14px;
-        width: 250px;
+        // width: 250px;
         // text-shadow: 1px 1px 10px #e3dccc;
       }
     }
@@ -237,6 +241,7 @@ body{
     }
     article{
       padding:30px 50px;
+      box-sizing: border-box;
       
       .title{
         font-size: 30px;

@@ -2,19 +2,27 @@ import React  from 'react'
 
 function HomeList({data,handler}) {
 
-  const handleClick= (index) =>{
-    console.log(index)
-    handler(index)
+  const handleClick= (dataId) =>{
+    console.log(dataId)
+    handler(dataId)
   }
-
+  let emptyItemLists = [];
+  for (let index = 0; index < 5; index++) {
+    emptyItemLists.push(<div className="item"></div>)
+    
+  }
   return (
     <div className="homelist">
       {
         data.map((data,index)=>{
           return (
           <div className="item" key={index}>
-            <a className="card" onClick={()=> handleClick(index)}>
-              <div className="thumb" style={{backgroundImage: `url("${process.env.PUBLIC_URL}/images/${data.works_vertical_b}")`}}>
+            <a className="card" onClick={()=> handleClick(data.id)}>
+              <div 
+                className="thumb" 
+                style={{
+                  backgroundImage: `url("${process.env.PUBLIC_URL}/images/${data.works_vertical_b}")`
+                }}>
                 
               </div>
               <article>
@@ -34,6 +42,7 @@ function HomeList({data,handler}) {
           )
         })
       }
+      {emptyItemLists}
 
 
     </div>

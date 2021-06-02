@@ -8,11 +8,17 @@ import SingleItem from './SingleItem'
 import Footer from './Footer'
 
 import Data from "./data.json"
+import AwardJson from "./award.json"
 function App() {
   const [isOpen , setIsOpen] = useState(false)
-  const [Number , setNumber] = useState(0)
-  const handleAddClick = (index) => {
-    setNumber(index)
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleAddClick = (dataId) => {
+    const results  =   Data.find((d)=>{
+      return d.id === dataId
+    })
+    setSearchResults(results)
+
     setIsOpen(!isOpen)
   };
   const handleOpen = () => {
@@ -23,13 +29,13 @@ function App() {
   return (
     <div className="App">
       {
-        isOpen ?  <SingleItem data={Data[Number]} handler={handleOpen} visible={isOpen} /> : null
+        isOpen ?  <SingleItem data={searchResults} handler={handleOpen} visible={isOpen} /> : null
       }
       
       <Header slides={Data}/>
       {/* <Awards/> */}
       <div className="container">
-        {/* <Awards/> */}
+        <Awards  data={AwardJson} handler={handleAddClick}/>
 
         <HomeList  data={Data} handler={handleAddClick}/>
       </div>
