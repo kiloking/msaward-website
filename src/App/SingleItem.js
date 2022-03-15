@@ -12,7 +12,7 @@ function SingleItem({data,handler}) {
   }
   useEffect(() => {
     const timer = setTimeout(() => {
-      setActive(!active)
+      setActive( a => !active)
     }, 500);
     return () => clearTimeout(timer);
   },[]);
