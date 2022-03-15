@@ -15,6 +15,9 @@ function Item({data,index,handler}) {
       background-size: cover;
       background-position: center;
       transition: 0.3s;
+    @media (max-width: 1400px) {  
+      height: 100%;
+    }
     @media (max-width: 480px) {
       background-image: url(${process.env.PUBLIC_URL}/images/${data.works_horizontal_b});
       height: 160px;
